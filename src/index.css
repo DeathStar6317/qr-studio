@@ -1,0 +1,191 @@
+/* =========================================================
+   Design tokens
+   Light is the default; dark applies via <html data-theme="dark">.
+   These only style the APP. The generated QR keeps its own colors.
+========================================================= */
+
+:root {
+  color-scheme: light;
+
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --bg: #f5f6fb;
+  --surface: #ffffff;
+  --surface-2: #f3f4f9;
+  --input-bg: #ffffff;
+  --segment-active: #ffffff;
+  --border: #e3e6ef;
+  --border-strong: #ccd1de;
+  --track: #dfe3ee;
+
+  --text: #121726;
+  --text-muted: #4a5468;
+  --text-faint: #667085;
+
+  --accent: #4f46e5;
+  --accent-hover: #4338ca;
+  --accent-ring: rgba(79, 70, 229, 0.26);
+  --on-accent: #ffffff;
+
+  --danger-bg: #fef2f2;
+  --danger-border: #fecaca;
+  --danger-text: #b42318;
+  --warn-bg: #fffaeb;
+  --warn-border: #fedf89;
+  --warn-text: #93370d;
+  --info-bg: #eff4ff;
+  --info-border: #c7d7fe;
+  --info-text: #3538cd;
+  --ok-bg: #ecfdf3;
+  --ok-border: #abefc6;
+  --ok-text: #067647;
+
+  --navbar-bg: rgba(255, 255, 255, 0.72);
+  --glow-1: rgba(99, 102, 241, 0.14);
+  --glow-2: rgba(236, 72, 153, 0.08);
+  --grid-dot: rgba(18, 23, 38, 0.07);
+  --preview-ring: rgba(18, 23, 38, 0.1);
+  --qr-ring: rgba(18, 23, 38, 0.1);
+
+  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.06);
+  --shadow-md: 0 10px 24px -10px rgba(16, 24, 40, 0.18);
+  --shadow-pop: 0 18px 40px -12px rgba(16, 24, 40, 0.28);
+  --panel-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset, 0 20px 50px -28px rgba(30, 35, 80, 0.28);
+
+  --toast-bg: #121726;
+  --toast-text: #f5f6fb;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: #0a0d16;
+  --surface: #121726;
+  --surface-2: #181e30;
+  --input-bg: #0e1220;
+  --segment-active: #28304c;
+  --border: #252c43;
+  --border-strong: #38415f;
+  --track: #2a3350;
+
+  --text: #eef1fa;
+  --text-muted: #b0b8cc;
+  --text-faint: #8f99b1;
+
+  --accent: #818cf8;
+  --accent-hover: #a5b4fc;
+  --accent-ring: rgba(129, 140, 248, 0.38);
+  --on-accent: #0b1020;
+
+  --danger-bg: rgba(248, 113, 113, 0.1);
+  --danger-border: rgba(248, 113, 113, 0.32);
+  --danger-text: #fda4a4;
+  --warn-bg: rgba(251, 191, 36, 0.1);
+  --warn-border: rgba(251, 191, 36, 0.3);
+  --warn-text: #fcd34d;
+  --info-bg: rgba(129, 140, 248, 0.12);
+  --info-border: rgba(129, 140, 248, 0.32);
+  --info-text: #c7d2fe;
+  --ok-bg: rgba(52, 211, 153, 0.1);
+  --ok-border: rgba(52, 211, 153, 0.3);
+  --ok-text: #6ee7b7;
+
+  --navbar-bg: rgba(10, 13, 22, 0.72);
+  --glow-1: rgba(99, 102, 241, 0.2);
+  --glow-2: rgba(236, 72, 153, 0.1);
+  --grid-dot: rgba(255, 255, 255, 0.06);
+  --preview-ring: rgba(255, 255, 255, 0.14);
+  --qr-ring: rgba(255, 255, 255, 0.16);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 10px 24px -10px rgba(0, 0, 0, 0.6);
+  --shadow-pop: 0 18px 40px -12px rgba(0, 0, 0, 0.7);
+  --panel-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset, 0 20px 50px -28px rgba(0, 0, 0, 0.8);
+
+  --toast-bg: #eef1fa;
+  --toast-text: #121726;
+}
+
+/* =========================================================
+   Base
+========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-strong) transparent;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--accent-ring);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background-clip: padding-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
