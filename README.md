@@ -1,75 +1,57 @@
-# React + TypeScript + Vite
+# QR Studio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, customizable QR Code Generator & Designer built with React and TypeScript.
 
-Currently, two official plugins are available:
+QR Studio lets you create QR codes for URLs, text, email addresses, phone numbers, and Wi-Fi networks, with real-time customization and downloadable results.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+- 🔗 Generate QR codes for:
+  - URLs
+  - Plain text
+  - Email
+  - Phone numbers
+  - Wi-Fi networks
+- 🎨 12 built-in QR themes
+- 🌈 Custom foreground and background colors
+- ✨ Gradient QR styling
+- 📐 Adjustable QR size
+- ⬜ Adjustable margin
+- 🛡️ Error correction levels: L, M, Q, H
+- 🌓 Light and dark mode
+- 📱 Responsive design for desktop and mobile
+- 👀 Real-time QR preview
+- 💾 Download QR codes as PNG or SVG
+- 📋 Copy generated content
+- 🕘 Recent QR codes
+- 💾 Local browser storage
+- ⚠️ Input validation and QR readability checks
+- 🎯 Clean, modern SaaS-style interface
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+- React
+- TypeScript
+- Vite
+- QR Code Styling
+- CSS
+- LocalStorage
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📸 Preview
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### QR Studio
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+![QR Studio Preview](src/assets/hero.png)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Getting Started
 
-```
+### Prerequisites
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+Make sure you have Node.js installed.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Installation
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Clone the repository:
 
-```
+```bash
+git clone https://github.com/DeathStar6317/qr-studio.git
